@@ -13,7 +13,7 @@ import { LandingSectionComponent } from './landing-section/landing-section.compo
 import { ProjectSectionComponent } from './project-section/project-section.component';
 import { TestimonialsSectionComponent } from './testimonials-section/testimonials-section.component';
 import { HeaderComponent } from './header/header.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     CommonModule,
-    Portfolio2RoutingModule
+    Portfolio2RoutingModule,
+    FontAwesomeModule
   ]
 })
 export class Portfolio2Module { }

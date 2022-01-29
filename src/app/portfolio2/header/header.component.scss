@@ -17,3 +17,9 @@ nav {
         font-weight: 500;
     }
 }
+
+@media(max-width: 1140px) {
+    ul{
+        display: none;
+    }
+}

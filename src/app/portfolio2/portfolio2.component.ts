@@ -18,11 +18,23 @@ export class Portfolio2Component implements OnInit {
   }
 
   ngAfterViewInit():void {
-    gsap.registerPlugin(ScrollTrigger);
-    const sections = gsap.utils.toArray('.scroll-section')
-    console.log(sections);
-    
 
+    //setting z indexes 
+    const sections = gsap.utils.toArray('.scroll-section')
+    sections.forEach((section: any, index)=>{
+      section.style.zIndex = index;
+    })
+
+    //gsap
+    gsap.registerPlugin(ScrollTrigger);
+    
+    ScrollTrigger.matchMedia({
+      '(min-width:1140px)':()=>{this.scrollGsap(sections)},
+      '(max-width:1140px)':()=>{document.body.style.overflow="auto"}
+    })
+  }
+
+  scrollGsap(sections: any){
     //setting up scroll trigger
     const t1 = gsap.timeline({
       scrollTrigger: {
@@ -109,7 +121,6 @@ export class Portfolio2Component implements OnInit {
       .to('nav',{
         color:this.secondaryColor
       },'copyrights')
-    
   }
 
 }
