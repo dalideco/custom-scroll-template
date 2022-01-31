@@ -1,3 +1,33 @@
 <div id="expertise" class="scroll-section" >
-    expertise
+    <div class="hard">
+        <h2 class="source-font">
+            Hard Skills
+        </h2>
+        <ul class="skills">
+            <li *ngFor="let skill of hardSkills">
+                <span class="top-part">
+                    <p> {{skill.name}} </p>
+                    <p> {{skill.level}} </p>
+                </span>
+                <div class="bottom-part">
+                    <span class="level-charge"
+                        [ngStyle]="{
+                            'transform': 'scaleX(.'+skill.level+')'
+                        }"
+                    ></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="soft">
+        <h2 class="source-font">
+            Soft Skills
+        </h2>
+        <ul class="skills">
+            <li *ngFor="let skill of softSkills" class="soft">
+                <fa-icon [icon]="skill.icon" ></fa-icon>
+                <p>icon.name</p>
+            </li>
+        </ul>
+    </div>
 </div>

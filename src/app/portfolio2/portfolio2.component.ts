@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -15,9 +16,16 @@ export class Portfolio2Component implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
   ngAfterViewInit():void {
+
+    //setting colors
+    const root: HTMLElement |null = document.querySelector(':root');
+    if(root){ 
+      //after data fetched set primary and secondary colors here
+    }
 
     //setting z indexes 
     const sections = gsap.utils.toArray('.scroll-section')

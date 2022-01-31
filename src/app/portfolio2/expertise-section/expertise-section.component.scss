@@ -2,4 +2,82 @@
     position: absolute; top :0; right: 100%;
     width: 100%; height: 100vh;  
     background-color: var(--primary-color);
+    color: var(--secondary-color);
+
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+
+    &>*{
+        margin: 30px;
+    }
+}
+
+h2{
+    font-weight: 600;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+p{
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+}
+
+ul.skills {
+    overflow-y: scroll;
+    padding-right: 15px;
+    max-height: 70vh;
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}
+
+li {
+    list-style: none;
+    margin-bottom: 19px;
+}
+
+.top-part {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 9px;
+}
+
+.bottom-part {
+    width: 480px;
+    height: 13px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 15px;
+    position: relative;
+    max-width: 90vw;
+
+    .level-charge{
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        border-radius: inherit;
+        background-color: var(--secondary-color);
+        transform-origin :left ; 
+
+    }
+}
+
+li.soft{
+    display:flex;
+    width: 480px;
+    max-width: 90vw;
+    fa-icon {
+        margin-right: 12px;
+    }
+}
+
+@media(max-width: 1140px) {
+    ul.skills{
+        overflow-y: auto;
+        max-height: none;
+    }
 }

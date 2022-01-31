@@ -27,6 +27,10 @@ h1,h2,h3{
     font-weight: 500
 }
 
+.source-font {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
 a{
     color: inherit;   
     text-decoration: none;
@@ -45,6 +49,8 @@ button {
 @media(max-width: 1140px){
     .scroll-section {
         position: static !important;
+        height:fit-content !important;
+        min-height: 100vh;
     }
 }
 

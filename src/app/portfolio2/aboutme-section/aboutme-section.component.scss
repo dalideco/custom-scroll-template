@@ -4,4 +4,45 @@
     background-color: var(--secondary-color);
     position: absolute;
     top:0; left: 100%;
+
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--primary-color)
+}
+
+img {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 50%;
+    max-width: 95%;
+}
+
+#about >* {
+    margin: 45px;
+}
+
+.content {
+    width: 700px;
+    max-width: 95%;
+    h1{
+        margin-bottom: 30px;
+    }
+    p{
+        margin-bottom: 30px;
+    }
+    fa-icon{
+        font-size: 70px;
+        margin-right: 20px;
+        position: relative;
+        cursor: pointer;
+        &:hover {
+            top : -1px;
+        }
+    }
+
+    
+
 }
