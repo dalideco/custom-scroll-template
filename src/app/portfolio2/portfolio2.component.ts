@@ -66,6 +66,7 @@ export class Portfolio2Component implements OnInit {
       .to('nav',{
         color: this.primaryColor
       },'about')
+      // .to('#landing > *',{opacity: 0},'about')
 
       //expertise sections
       .add('expertise')

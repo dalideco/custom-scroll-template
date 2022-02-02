@@ -44,20 +44,8 @@ export class ExpertiseSectionComponent implements OnInit {
     {
       name: 'Angular', 
       level: 8
-    },
-    {
-      name: 'Angular', 
-      level: 8
-    },
-    {
-      name: 'Angular', 
-      level: 8
-    },
-    {
-      name: 'Angular', 
-      level: 8
-    },
-    
+    }
+
   ]
 
   softSkills = [
@@ -93,34 +81,7 @@ export class ExpertiseSectionComponent implements OnInit {
       name: "Communication",
       icon: faComments
     },
-    {
-      name: "Communication",
-      icon: faComments
-    },
-    {
-      name: "Communication",
-      icon: faComments
-    },
-    {
-      name: "Communication",
-      icon: faComments
-    },
-    {
-      name: "Communication",
-      icon: faComments
-    },
-    {
-      name: "Communication",
-      icon: faComments
-    },
-    {
-      name: "Communication",
-      icon: faComments
-    },
-    {
-      name: "Communication",
-      icon: faComments
-    },
+   
     
   ]
 

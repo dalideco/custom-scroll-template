@@ -1,3 +1,68 @@
 <div id="career" class="scroll-section">
-    career
+    <div class="education">
+        <h2 class="source-font">
+            Education
+        </h2>
+        <ul class="works">
+            <li *ngFor="let work of education">
+                <div class="cadre">
+                    {{work.title}}
+                    <span class="arrow"></span>
+                </div>
+                <div class="content">
+                    <div class="placedate">
+                        <span class="place "> {{work.place}} </span>
+                        <span class="date "> {{work.date}} </span>
+                    </div>
+                    <div class="description">
+                        {{work.description}}
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="Work">
+        <h2 class="source-font">
+            Work
+        </h2>
+        <ul class="works">
+            <li *ngFor="let work of works">
+                <div class="cadre">
+                    {{work.title}}
+                    <span class="arrow"></span>
+                </div>
+                <div class="content">
+                    <div class="placedate">
+                        <span class="place "> {{work.place}} </span>
+                        <span class="date "> {{work.date}} </span>
+                    </div>
+                    <div class="description">
+                        {{work.description}}
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="Volunteering">
+        <h2 class="source-font">
+            Volunteering
+        </h2>
+        <ul class="works">
+            <li *ngFor="let work of volunteering">
+                <div class="cadre">
+                    {{work.title}}
+                    <span class="arrow"></span>
+                </div>
+                <div class="content">
+                    <div class="placedate">
+                        <span class="place "> {{work.place}} </span>
+                        <span class="date "> {{work.date}} </span>
+                    </div>
+                    <div class="description">
+                        {{work.description}}
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>

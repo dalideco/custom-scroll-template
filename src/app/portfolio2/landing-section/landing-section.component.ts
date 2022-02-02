@@ -26,16 +26,9 @@ export class LandingSectionComponent implements OnInit {
 
     const t= gsap.timeline({})
     t.from('.scroll-text .scroll-cover',{
-      stagger: 0.25,
-      duration:1,
+      stagger: 0.5,
+      duration:2,
       yPercent:-100
-    }).from('.scroll-btn',{
-      duration: 1,
-      x: -200,
-      opacity:0,
-    },'-=0.7')
-    .from('.scroll-btn-icon',{
-      opacity:0
     })
   }
 
