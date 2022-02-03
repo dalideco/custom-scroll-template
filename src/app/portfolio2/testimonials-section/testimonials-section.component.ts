@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { of } from 'rxjs';
+
+type direction = -1 |1;
 
 @Component({
   selector: 'app-testimonials-section',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestimonialsSectionComponent implements OnInit {
 
+  testimonials: any[] = [
+    {
+      image: 'assets/me.jpg', 
+      quote:'3ali dali is the best', 
+      name: 'Dali Sahnoun'
+    },
+    {
+      image: 'assets/me.jpg', 
+      quote:'3ali dali is the best', 
+      name: 'Dali Sahnoun'
+    },
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
+    
+  }
+
+  Xvalue =0;
+  @ViewChild('cardcontainer') container :any ; 
+  slide(direct: direction): void {
+    const el:HTMLElement = this.container.nativeElement
+    el.scrollBy({
+      left: (window.innerWidth-200)*direct
+    })
   }
 
 }

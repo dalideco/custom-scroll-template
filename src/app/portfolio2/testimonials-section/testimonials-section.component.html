@@ -1,3 +1,15 @@
 <div id="testimonials" class="scroll-section">
-    testimonials
+    <div class="card-container" #cardcontainer>
+        <div *ngFor="let test of testimonials" class="card"
+
+        >
+            <div class="content">
+                <p class="quote">"{{test.quote}}"</p>
+                <p class="name">--{{test.name}}</p>
+            </div>
+            <img [src]="test.image" alt="" class="card-img">
+        </div>
+    </div>
+    <button (click)="slide(1)" class="next">next</button>
+    <button (click)="slide(-1)" class="prev">prev</button>
 </div>
