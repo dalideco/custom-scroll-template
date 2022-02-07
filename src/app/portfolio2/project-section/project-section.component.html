@@ -2,13 +2,18 @@
     <h2> Projects </h2>
 
     <div class="horr-bar">
-        <div *ngFor="let project of projects" class="card">
+        <div *ngFor="let project of projects; let i =index;" class="card"
+            (click)="showProject(i)"
+        >
             <h3>
-                WipeLacer
+                {{project.name}}
             </h3>
             <p>
-                A type racing application 
+                {{project.description}}
             </p>
         </div>
     </div>
+
+    
+
 </div>

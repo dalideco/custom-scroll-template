@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectShowService } from '../project-show.service';
 
 @Component({
   selector: 'app-project-section',
@@ -14,15 +15,26 @@ export class ProjectSectionComponent implements OnInit {
     },
     {
       name: 'WipeLacer',
-      description :'A type racing application'
+      description :'A type racing '
     }
   ]
 
+  selectedItem : any ;
 
-  constructor() { }
+
+  constructor(
+    private projectShow: ProjectShowService
+  ) { }
 
   ngOnInit(): void {
+    this.selectedItem = this.projects[0];
+  }
 
+  showProject(i:number ):void {
+    //show project i
+    
+    this.projectShow.selectProject(this.projects[i]);
+    
   }
 
 }

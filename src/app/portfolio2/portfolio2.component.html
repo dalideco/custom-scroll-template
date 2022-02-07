@@ -10,3 +10,9 @@
     <app-contact-section></app-contact-section>
     <app-copyrights></app-copyrights>
 </div>
+<div #projectshowcase id="project-showcase">
+    <h1>{{selectedProject.name}}</h1>
+    <button (click)="unSelect()">
+        unselect
+    </button>
+</div>

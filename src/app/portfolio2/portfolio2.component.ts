@@ -1,7 +1,9 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit,ViewChild } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { ProjectShowService } from './project-show.service';
+
 
 @Component({
   selector: 'app-portfolio2',
@@ -12,11 +14,32 @@ export class Portfolio2Component implements OnInit {
 
   primaryColor= '#876445';
   secondaryColor= '#F4DFBA';
+  selectedProject:any ={
+    name:'',
+    description:'',
+  };
+  @ViewChild('projectshowcase') projectShowcase: any;
 
-  constructor() { }
+  constructor(private projectShow: ProjectShowService) { }
 
   ngOnInit(): void {
+    console.log('dsom');
     
+    this.selectedProject = this.projectShow.getSeletedProject()
+
+    this.projectShow.ObserveProject().subscribe(project =>{
+      this.selectedProject = project
+      this.projectShowcase.nativeElement.classList.add('shown')
+    })
+
+    this.projectShow.observeUnselect().subscribe(()=>{
+      this.projectShowcase.nativeElement.classList.remove('shown');
+    })
+    
+  }
+
+  unSelect(){
+    this.projectShow.unSelect();
   }
 
   ngAfterViewInit():void {
