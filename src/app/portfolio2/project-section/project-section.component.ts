@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectSectionComponent implements OnInit {
 
+  projects : any[] = [
+    {
+      name: 'WipeLacer',
+      description :'A type racing application'
+    },
+    {
+      name: 'WipeLacer',
+      description :'A type racing application'
+    }
+  ]
+
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
