@@ -10,6 +10,10 @@
             <img [src]="test.image" alt="" class="card-img">
         </div>
     </div>
-    <button (click)="slide(1)" class="next">next</button>
-    <button (click)="slide(-1)" class="prev">prev</button>
+    <button (click)="slide(1)" class="next translation">
+        <fa-icon [icon]="faArrowRight" ></fa-icon>
+    </button>
+    <button (click)="slide(-1)" class="prev translation">
+        <fa-icon [icon]="faArrowLeft" ></fa-icon>
+    </button>
 </div>

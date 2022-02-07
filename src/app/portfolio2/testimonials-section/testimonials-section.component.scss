@@ -88,14 +88,36 @@ $card-radius: 40px;
     transform: translateY(-50%);
 }
 .prev{
-    left: 0;
+    left: 10px;
 }
 .next{
-    right: 0;
+    right: 10px;
+}
+
+.translation {
+    background: var(--secondary-color);
+    border:none;
+    border-radius: 5px;
+    padding: 5px;
+    
+    fa-icon {
+        font-size: 1.2rem;
+        color: var(--primary-color)
+    }   
+
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 @media (max-width: 1140px) {
     #testimonials{
         flex-wrap: wrap;
+    }
+    .card-container{
+        flex-direction: column;
+    }
+    button {
+        display:none;
     }
 }

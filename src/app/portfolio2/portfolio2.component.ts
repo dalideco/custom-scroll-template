@@ -66,6 +66,10 @@ export class Portfolio2Component implements OnInit {
       .to('nav',{
         color: this.primaryColor
       },'about')
+      .from('#about>*',{
+        opacity: 0,
+        y: -100
+      })
       // .to('#landing > *',{opacity: 0},'about')
 
       //expertise sections
@@ -76,6 +80,10 @@ export class Portfolio2Component implements OnInit {
       .to('nav', {
         color: this.secondaryColor
       },'expertise')
+      .from('#expertise>*',{
+        opacity: 0,
+        y: -100
+      })
 
       //career section
       .add('career')
@@ -85,6 +93,10 @@ export class Portfolio2Component implements OnInit {
       .to('nav',{
         color:this.primaryColor
       },'career')
+      .from('#career>*',{
+        opacity: 0,
+        y: -100
+      })
 
       //achievements section
       .add('achievements')
@@ -94,6 +106,10 @@ export class Portfolio2Component implements OnInit {
       .to('nav',{
         color:this.secondaryColor
       },'achievements')
+      .from('#achievements>*',{
+        opacity: 0,
+        y: -100
+      })
 
       //projects section
       .add('projects')
@@ -103,6 +119,10 @@ export class Portfolio2Component implements OnInit {
       .to('nav',{
         color:this.primaryColor
       },'projects')
+      .from('#projects>*',{
+        opacity: 0,
+        y: -100
+      })
 
       //testimonials section
       .add('testimonials')
@@ -112,6 +132,9 @@ export class Portfolio2Component implements OnInit {
       .to('nav',{
         color:this.secondaryColor
       },'testimonials')
+      .from('#testimonials>*',{
+        opacity: 0,
+      })
 
       //contact section
       .add('contact')
@@ -121,6 +144,10 @@ export class Portfolio2Component implements OnInit {
       .to('nav',{
         color:this.primaryColor
       },'contact')
+      .from('#contact>*',{
+        opacity: 0,
+        y: -100
+      })
 
       //copyrights
       .add('copyrights')
@@ -130,6 +157,10 @@ export class Portfolio2Component implements OnInit {
       .to('nav',{
         color:this.secondaryColor
       },'copyrights')
+      .from('#copyrights>*',{
+        opacity: 0,
+        y: -100
+      })
   }
 
 }

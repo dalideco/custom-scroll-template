@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { of } from 'rxjs';
+import { faArrowRight,faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 type direction = -1 |1;
 
@@ -10,6 +11,8 @@ type direction = -1 |1;
 })
 export class TestimonialsSectionComponent implements OnInit {
 
+  faArrowRight = faArrowRight
+  faArrowLeft = faArrowLeft
   testimonials: any[] = [
     {
       image: 'assets/me.jpg', 

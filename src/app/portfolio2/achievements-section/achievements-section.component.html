@@ -1,3 +1,14 @@
 <div id="achievements" class="scroll-section" >
-    achievements
+    <h2> Achievements </h2>
+
+    <div class="horr-bar">
+        <div *ngFor="let ach of achievements" class="card">
+            <fa-icon [icon]="faTrophy" ></fa-icon>
+            <p> {{ach.name}} </p>
+            <p> 2019 </p>
+            <div class="content">
+                {{ach.content}}
+            </div>
+        </div>
+    </div>
 </div>
