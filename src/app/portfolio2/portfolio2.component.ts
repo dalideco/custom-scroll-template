@@ -1,9 +1,10 @@
-import { Component, OnInit, AfterViewInit,ViewChild } from '@angular/core';
-import { RouterTestingModule } from '@angular/router/testing';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { ProjectShowService } from './project-show.service';
-
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import scrollGsap from './functions/scrollGsap';
 
 @Component({
   selector: 'app-portfolio2',
@@ -12,178 +13,97 @@ import { ProjectShowService } from './project-show.service';
 })
 export class Portfolio2Component implements OnInit {
 
-  primaryColor= '#876445';
-  secondaryColor= '#F4DFBA';
-  selectedProject:any ={
-    name:'',
-    description:'',
+  primaryColor = '#876445';
+  secondaryColor = '#F4DFBA';
+  selectedProject: any = {
+    name: '',
+    description: '',
   };
-  @ViewChild('projectshowcase') projectShowcase: any;
 
-  constructor(private projectShow: ProjectShowService) { }
+  faArrowLeft = faArrowLeft
+  faGithub = faGithub
+  faLinkedinIn = faLinkedinIn
+
+  projectT = gsap.timeline({})
+
+
+  constructor(private projectShow: ProjectShowService) {}
 
   ngOnInit(): void {
-    console.log('dsom');
-    
     this.selectedProject = this.projectShow.getSeletedProject()
 
-    this.projectShow.ObserveProject().subscribe(project =>{
+    this.projectShow.ObserveProject().subscribe(project => {
       this.selectedProject = project
-      this.projectShowcase.nativeElement.classList.add('shown')
+      this.projectAppear()
     })
 
-    this.projectShow.observeUnselect().subscribe(()=>{
-      this.projectShowcase.nativeElement.classList.remove('shown');
+    this.projectShow.observeUnselect().subscribe(() => {
+      this.projectDisappear()
     })
-    
   }
 
-  unSelect(){
+  projectAppear() {
+    this.projectT.play();
+  }
+
+  projectDisappear() {
+    this.projectT.reverse()
+  }
+
+  unSelect() {
     this.projectShow.unSelect();
   }
 
-  ngAfterViewInit():void {
+  ngAfterViewInit(): void {
+
+    //setting up the project animation
+    this.projectAnimationSetup()
 
     //setting colors
-    const root: HTMLElement |null = document.querySelector(':root');
-    if(root){ 
-      //after data fetched set primary and secondary colors here
-    }
+    this.setColors()
 
     //setting z indexes 
     const sections = gsap.utils.toArray('.scroll-section')
-    sections.forEach((section: any, index)=>{
+    sections.forEach((section: any, index) => {
       section.style.zIndex = index;
     })
 
-    //gsap
+    //gsap custom scroll
     gsap.registerPlugin(ScrollTrigger);
-    
+
     ScrollTrigger.matchMedia({
-      '(min-width:1140px)':()=>{this.scrollGsap(sections)},
-      '(max-width:1140px)':()=>{document.body.style.overflow="auto"}
+      '(min-width:1140px)': () => { this.scrollGsap(sections) },
+      '(max-width:1140px)': () => { document.body.style.overflow = "auto" }
     })
   }
 
-  scrollGsap(sections: any){
-    //setting up scroll trigger
-    const t1 = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#scroll-container',
-        markers:true,
-        scrub: 1,
-        pin:true,
-        //@ts-ignore
-        end: ()=> "+=" + document.querySelector('#scroll-container').offsetHeight*(sections.length)
-      }
+  scrollGsap(sections: any) {
+    scrollGsap({
+      sections: sections,
+      primaryColor: this.primaryColor,
+      secondaryColor: this.secondaryColor
     })
+  }
 
-    //scroll animations
-    t1
-
-      //about sections
-      .add('about')
-      .to('#about',{
-        xPercent:-100
-      },'about')
-      .to('nav',{
-        color: this.primaryColor
-      },'about')
-      .from('#about>*',{
-        opacity: 0,
-        y: -100
+  projectAnimationSetup() {
+    this.projectT
+      .to("#project-showcase-animation", {
+        yPercent: 100
       })
-      // .to('#landing > *',{opacity: 0},'about')
-
-      //expertise sections
-      .add('expertise')
-      .to('#expertise',{
-        xPercent:100,
-      },'expertise')
-      .to('nav', {
-        color: this.secondaryColor
-      },'expertise')
-      .from('#expertise>*',{
-        opacity: 0,
-        y: -100
+      .to("#project-showcase", {
+        yPercent: 100
       })
-
-      //career section
-      .add('career')
-      .to('#career',{
-        yPercent:100
-      },'career')
-      .to('nav',{
-        color:this.primaryColor
-      },'career')
-      .from('#career>*',{
-        opacity: 0,
-        y: -100
+      .from("#project-showcase > *", {
+        opacity: 0
       })
+    this.projectT.pause();
+  }
 
-      //achievements section
-      .add('achievements')
-      .to('#achievements',{
-        yPercent:100
-      },'achievements')
-      .to('nav',{
-        color:this.secondaryColor
-      },'achievements')
-      .from('#achievements>*',{
-        opacity: 0,
-        y: -100
-      })
-
-      //projects section
-      .add('projects')
-      .to('#projects',{
-        xPercent:-100
-      },'projects')
-      .to('nav',{
-        color:this.primaryColor
-      },'projects')
-      .from('#projects>*',{
-        opacity: 0,
-        y: -100
-      })
-
-      //testimonials section
-      .add('testimonials')
-      .to('#testimonials',{
-        xPercent:100
-      },'testimonials')
-      .to('nav',{
-        color:this.secondaryColor
-      },'testimonials')
-      .from('#testimonials>*',{
-        opacity: 0,
-      })
-
-      //contact section
-      .add('contact')
-      .to('#contact',{
-        yPercent:100
-      },'contact')
-      .to('nav',{
-        color:this.primaryColor
-      },'contact')
-      .from('#contact>*',{
-        opacity: 0,
-        y: -100
-      })
-
-      //copyrights
-      .add('copyrights')
-      .to('#copyrights',{
-        yPercent:100
-      },'copyrights')
-      .to('nav',{
-        color:this.secondaryColor
-      },'copyrights')
-      .from('#copyrights>*',{
-        opacity: 0,
-        y: -100
-      })
+  setColors() {
+    const root: HTMLElement | null = document.querySelector(':root');
+    if (root) {
+      //after data fetched set primary and secondary colors here
+    }
   }
 
 }

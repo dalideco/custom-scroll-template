@@ -10,9 +10,33 @@
     <app-contact-section></app-contact-section>
     <app-copyrights></app-copyrights>
 </div>
+
 <div #projectshowcase id="project-showcase">
-    <h1>{{selectedProject.name}}</h1>
     <button (click)="unSelect()">
-        unselect
+        <fa-icon [icon]="faArrowLeft"></fa-icon>
     </button>
+    <div class="images">
+        <img src="assets/me.jpg" alt="">
+        <img src="assets/me.jpg" class="current" alt="">
+        <img src="assets/me.jpg" alt="">
+    </div>
+    <div class="content">
+        <h1>{{selectedProject.name}}</h1>
+        <div class="hor">
+            <div class="skill">Javascript</div>
+            <div class="skill">Javascript</div>
+        </div>
+        <p>
+            A type racing application lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem
+            ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
+            ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
+            ipsumlorem ipsumlorem ipsum
+        </p>
+        <div>
+            <fa-icon [icon]="faGithub" ></fa-icon>
+            <fa-icon [icon]="faLinkedinIn" ></fa-icon>
+        </div>
+    </div>
+</div>
+<div #projectshow id="project-showcase-animation">
 </div>
