@@ -72,8 +72,13 @@ export class Portfolio2Component implements OnInit {
     gsap.registerPlugin(ScrollTrigger);
 
     ScrollTrigger.matchMedia({
-      '(min-width:1140px)': () => { this.scrollGsap(sections) },
-      '(max-width:1140px)': () => { document.body.style.overflow = "auto" }
+      '(min-width:1140px)': () => { 
+        document.body.style.overflowY ="scroll"
+        this.scrollGsap(sections)
+       },
+      '(max-width:1140px)': () => { 
+        document.body.style.overflow = "auto" 
+      }
     })
   }
 
