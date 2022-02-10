@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "gh-pages -d dist/angular-gsap"
+    "deploy": "gh-pages -d dist/angular-gsap",
+    "ghdep":"ng build --prod --base-href 'https://dalideco.github.io/custom-scroll-template/' && npm run deploy"
   },
   "private": true,
   "dependencies": {

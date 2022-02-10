@@ -41,7 +41,10 @@ img {
             top : -1px;
         }
     }
+}
 
-    
-
+@media(max-width: 1140px){
+    #about {
+        flex-direction: column;
+    }
 }
