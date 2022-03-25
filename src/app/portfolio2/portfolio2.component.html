@@ -4,7 +4,7 @@
     <app-aboutme-section></app-aboutme-section>
     <app-expertise-section></app-expertise-section>
     <app-career-section></app-career-section>
-    <app-achievements-section></app-achievements-section>
+    <app-achievements-section *ngIf="false"></app-achievements-section>
     <app-project-section></app-project-section>
     <app-testimonials-section></app-testimonials-section>
     <app-contact-section></app-contact-section>
@@ -16,25 +16,22 @@
         <fa-icon [icon]="faArrowLeft"></fa-icon>
     </button>
     <div class="images">
-        <img src="assets/me.jpg" alt="">
-        <img src="assets/me.jpg" class="current" alt="">
-        <img src="assets/me.jpg" alt="">
+        <img [src]="selectedProject.image" alt="">
+        <img [src]="selectedProject.image" class="current" alt="">
+        <img [src]="selectedProject.image" alt="">
     </div>
     <div class="content">
         <h1>{{selectedProject.name}}</h1>
-        <div class="hor">
-            <div class="skill">Javascript</div>
-            <div class="skill">Javascript</div>
+        <div class="hor" *ngIf="selectedProject.skills">
+            <div *ngFor="let skill of selectedProject.skills" class="skill">{{skill}}</div>
         </div>
         <p>
-            A type racing application lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem
-            ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
-            ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
-            ipsumlorem ipsumlorem ipsum
+            {{selectedProject.description}}
         </p>
         <div>
-            <fa-icon [icon]="faGithub" ></fa-icon>
-            <fa-icon [icon]="faLinkedinIn" ></fa-icon>
+            <a [href]="selectedProject.github" target="_blank">
+                <fa-icon [icon]="faGithub"></fa-icon>
+            </a>
         </div>
     </div>
 </div>

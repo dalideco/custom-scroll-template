@@ -1,4 +1,4 @@
-<div id="landing"class="scroll-section">
+<div id="landing" class="scroll-section">
     <h1 class="huge-title scroll-text">
         {{name}}
         <div class="scroll-cover"></div>
@@ -7,8 +7,12 @@
         Web Developer
         <div class="scroll-cover"></div>
     </h3>
-    <button class="circle-btn scroll-btn">
-        <fa-icon [icon]="faFileDownload" class="scroll-btn-icon" ></fa-icon>
+    <a 
+        download
+        href="assets/resume.pdf"
+        class="circle-btn scroll-btn" style="cursor:pointer"
+    >
+        <fa-icon [icon]="faFileDownload" class="scroll-btn-icon"></fa-icon>
         <p>Resume</p>
-    </button>
+    </a>
 </div>

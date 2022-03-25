@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faComments } from '@fortawesome/free-solid-svg-icons';
+import { faComments, faClock, faUserPlus, faUser, faHourglass } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-expertise-section',
@@ -10,40 +10,32 @@ export class ExpertiseSectionComponent implements OnInit {
 
   hardSkills = [
     {
-      name: 'Angular', 
+      name: 'React',
+      level: 10
+    },
+    {
+      name: 'Vue',
       level: 8
     },
     {
-      name: 'Angular', 
+      name: 'Angular',
+      level: 9
+    },
+    {
+      name: 'Node.js',
+      level: 9
+    },
+    {
+      name: 'Nestjs',
       level: 8
     },
     {
-      name: 'Angular', 
-      level: 8
+      name: 'PHP',
+      level: 7
     },
     {
-      name: 'Angular', 
-      level: 8
-    },
-    {
-      name: 'Angular', 
-      level: 8
-    },
-    {
-      name: 'Angular', 
-      level: 8
-    },
-    {
-      name: 'Angular', 
-      level: 8
-    },
-    {
-      name: 'Angular', 
-      level: 8
-    },
-    {
-      name: 'Angular', 
-      level: 8
+      name: 'Symfony',
+      level: 7
     }
 
   ]
@@ -54,35 +46,17 @@ export class ExpertiseSectionComponent implements OnInit {
       icon: faComments
     },
     {
-      name: "Communication",
-      icon: faComments
+      name: "Patience",
+      icon: faClock
     },
     {
-      name: "Communication",
-      icon: faComments
+      name: "Teamwork",
+      icon: faUserPlus
     },
     {
-      name: "Communication",
-      icon: faComments
-    },
-    {
-      name: "Communication",
-      icon: faComments
-    },
-    {
-      name: "Communication",
-      icon: faComments
-    },
-    {
-      name: "Communication",
-      icon: faComments
-    },
-    {
-      name: "Communication",
-      icon: faComments
-    },
-   
-    
+      name: "Commitment",
+      icon: faHourglass
+    }
   ]
 
   constructor() { }

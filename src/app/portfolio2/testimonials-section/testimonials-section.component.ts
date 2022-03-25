@@ -15,15 +15,10 @@ export class TestimonialsSectionComponent implements OnInit {
   faArrowLeft = faArrowLeft
   testimonials: any[] = [
     {
-      image: 'assets/me.jpg', 
-      quote:'3ali dali is the best', 
+      image: 'assets/hamdouni.jpg', 
+      quote:'dali is the best', 
       name: 'Dali Sahnoun'
-    },
-    {
-      image: 'assets/me.jpg', 
-      quote:'3ali dali is the best', 
-      name: 'Dali Sahnoun'
-    },
+    }
   ]
 
   constructor() { }

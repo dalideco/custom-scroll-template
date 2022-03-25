@@ -11,11 +11,16 @@ export class ProjectSectionComponent implements OnInit {
   projects : any[] = [
     {
       name: 'WipeLacer',
-      description :'A type racing application'
+      description :'A type racing application',
+      skills: ['React','Javascript','CSS'],
+      image: "assets/wipe-lacer.png",
+      github:"https://github.com/sirajeddineaissa/WipeLacer"
     },
     {
-      name: 'WipeLacer',
-      description :'A type racing '
+      name: 'Kipy',
+      description :'A mobile app for teaching children',
+      image: "assets/kipy.png",
+      github: "https://github.com/dalideco/droiday-project"
     }
   ]
 

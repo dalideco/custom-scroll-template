@@ -67,18 +67,18 @@ export default function scrollGsap({
           y: -100
         })
   
-        //achievements section
-        .add('achievements')
-        .to('#achievements',{
-          yPercent:100
-        },'achievements')
-        .to('nav',{
-          color:secondaryColor
-        },'achievements')
-        .from('#achievements>*',{
-          opacity: 0,
-          y: -100
-        })
+        // //achievements section
+        // .add('achievements')
+        // .to('#achievements',{
+        //   yPercent:100
+        // },'achievements')
+        // .to('nav',{
+        //   color:secondaryColor
+        // },'achievements')
+        // .from('#achievements>*',{
+        //   opacity: 0,
+        //   y: -100
+        // })
   
         //projects section
         .add('projects')
